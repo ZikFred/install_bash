@@ -46,7 +46,3 @@ echo "############# INFO: STEP_5 - Status Antivirus"
 sudo apt install clamtk -y
 sleep 3
 echo ""
-
-git remote set-url origin git@github.com:Zikfred/your-repository.git
-
-
