@@ -42,7 +42,7 @@ sudo systemctl status clamav-freshclam
 sleep 3
 echo ""
 
-echo "############# INFO: STEP_5 - Status Antivirus"
+echo "############# INFO: STEP_6 - Install GUI Antivirus"
 sudo apt install clamtk -y
 sleep 3
 echo ""
