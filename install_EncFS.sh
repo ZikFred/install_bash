@@ -23,7 +23,7 @@ log() {
   esac
 }
 
-log INFO "Update System Packege"
+log INFO "Update System Package"
 echo ""
 sudo apt update
 
