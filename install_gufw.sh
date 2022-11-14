@@ -1,25 +1,51 @@
 #!/bin/bash
 
-echo "############# INFO: Update System Packege"
+log() {
+  level=$1
+  log_msg=$2
+
+  case "$level" in
+    INFO)
+      echo -en "\033[34m ######## INFO: "
+      echo -n "$log_msg"
+      echo -e "\033[0m"
+      ;;
+    ERROR)
+      echo -en "\033[1;31m ######## ERROR: "
+      echo -n "$log_msg"
+      echo -e "\033[0m"
+      ;;
+    WARN)
+      echo -en "\033[1;33m ######## WARNING: "
+      echo -n "$log_msg"
+      echo -e "\033[0m"
+      ;;
+  esac
+}
+
+
+log INFO "Update System Packege"
 echo ""
 sudo apt update
 echo ""
 
-echo "############# INFO: Install GUFW on Linux Ubuntu"
+log INFO "Install GUFW on Linux Ubuntu"
 sleep 3
 echo ""
 
-echo "############# INFO: STEP_1 - Install 'GUFW'"
+log INFO "STEP_1 - Install 'GUFW'"
 sudo apt install gufw -y
 sleep 3
 echo ""
 
-echo "############# INFO: STEP_2 - Enable 'GUFW' after Restart PC"
+log INFO "STEP_2 - Enable 'GUFW' after Restart PC"
 sudo ufw enable
 sleep 3
 echo ""
 
-echo "############# INFO: STEP_3 - Status 'GUFW'"
+log INFO "STEP_3 - Status 'GUFW'"
 sudo systemctl status ufw
 sleep 3
 echo ""
+
+log INFO "Done!"
